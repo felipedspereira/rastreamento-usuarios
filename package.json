@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/felipedspereira/rastreamento-usuarios/issues"
   },
-  "homepage": "https://github.com/felipedspereira/rastreamento-usuarios#readme"
+  "homepage": "https://github.com/felipedspereira/rastreamento-usuarios#readme",
+  "dependencies": {
+    "http-server": "^0.10.0"
+  }
 }
