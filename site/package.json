@@ -1,0 +1,21 @@
+{
+  "name": "site",
+  "version": "1.0.0",
+  "description": "site para o teste da SaaS Enterprise",
+  "main": "index.html",
+  "scripts": {
+    "dev": "grunt watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "site",
+    "rd",
+    "resultadosdigitais"
+  ],
+  "author": "felipe pereira",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0"
+  }
+}
