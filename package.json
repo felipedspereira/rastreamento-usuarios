@@ -1,0 +1,19 @@
+{
+  "name": "resultadosdigitais",
+  "version": "1.0.0",
+  "description": "desafio rastreamento de usuarios",
+  "main": "site/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/felipedspereira/rastreamento-usuarios.git"
+  },
+  "author": "felipe pereira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/felipedspereira/rastreamento-usuarios/issues"
+  },
+  "homepage": "https://github.com/felipedspereira/rastreamento-usuarios#readme"
+}
