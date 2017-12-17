@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt">
 
 <head>
     <title>Desafio Rastreamento de Usuários - Sobre</title>
@@ -12,22 +12,30 @@
 
 <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="/site"><span class="text-primary">SaaS Enterprise</span></a>
+        <a class="navbar-brand" href="/site">
+            <span class="text-primary">SaaS Enterprise</span>
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
             aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/site">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/site">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="contato.html">Contato <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="contato.html">Contato
+                        <span class="sr-only">(current)</span>
+                    </a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="sobre.html">Sobre<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="sobre.html">Sobre
+                        <span class="sr-only">(current)</span>
+                    </a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
@@ -38,26 +46,28 @@
     </nav>
 
     <main role="main">
-
-        <div class="jumbotron">
+        <div class="jumbotron mt-4">
             <div class="container">
                 <div class="col-8 offset-2">
-                    <h2 class="mt-2">Quem somos</h2>
+                    <h2>Quem somos</h2>
                     <p>Somos uma empresa no seguimento de Software as a Service e prestamos os serviços de Donec id elit non
                         mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
                         nibh, ut fermentum massa justo sit amet risus. Etiam porta
                     </p>
-                    <p><a class="btn btn-secondary" href="contato.html" role="button">Contate-nos!</a></p>
+                    <p>
+                        <a class="btn btn-secondary" href="contato.html" role="button">Contate-nos!</a>
+                    </p>
                 </div>
             </div>
-            <hr>
         </div>
     </main>
 
+    <hr>
+    
     <footer class="container">
         <div class="d-flex">
             <p class="mr-auto">&copy; Felipe Pereira, 2017</p>
-            <p class="">v 1.0</p>
+            <p>v 1.0</p>
         </div>
     </footer>
 </body>
@@ -68,10 +78,10 @@
     crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
     crossorigin="anonymous"></script>
-    <script src="/site/js/trackingJS.min.js"></script>
-    <script type="text/javascript">
-        trackingJS.config('https://rastreamento-usuarios-app.herokuapp.com/activity');
-    </script>
+<script src="/site/js/trackingJS.min.js"></script>
+<script type="text/javascript">
+    trackingJS.config('https://rastreamento-usuarios-app.herokuapp.com/activity');
+</script>
 </body>
 
 </html>

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt">
 
 <head>
     <title>Desafio Rastreamento de Usuários - Contato</title>
@@ -13,22 +13,30 @@
 
 <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="/site"><span class="text-primary">SaaS Enterprise</span></a>
+        <a class="navbar-brand" href="/site">
+            <span class="text-primary">SaaS Enterprise</span>
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
             aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/site">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/site">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="contato.html">Contato <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="contato.html">Contato
+                        <span class="sr-only">(current)</span>
+                    </a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="sobre.html">Sobre<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="sobre.html">Sobre
+                        <span class="sr-only">(current)</span>
+                    </a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
@@ -39,17 +47,18 @@
     </nav>
 
     <main role="main">
-
-        <div class="jumbotron">
+        <div class="jumbotron mt-4">
             <div class="container">
                 <div class="col-8 offset-2">
-                    <h3 class="mt-2">Nós temos a solução para o seu negócio</h3>
+                    <h3>Nós temos a solução para o seu negócio</h3>
                     <h5 class="text-muted">Entre em contato conosco e descubra como podemos lhe ajudá-lo a alavancar o seu negócio</h5>
 
                     <br>
                     <form>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Email: <span>*</span></label>
+                            <label for="exampleInputEmail1">Email:
+                                <span>*</span>
+                            </label>
                             <div class="input-group">
                                 <span class="input-group-addon text-primary">@</span>
                                 <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Informe seu email">
@@ -67,16 +76,15 @@
                     </form>
                 </div>
             </div>
-            <hr>
         </div>
     </main>
 
+    <hr>
     <footer class="container">
         <div class="d-flex">
             <p class="mr-auto">&copy; Felipe Pereira, 2017</p>
             <p class="">v 1.0</p>
         </div>
-        <button class="btn btn-primary" onclick="teste()">OK</button>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -101,7 +109,7 @@
             xhr.send("email=" + $("#exampleInputEmail1").val());
 
             alert('Sua notificação foi enviada com sucesso!');
-            window.location = '/site'
+            window.location = '/site';
         }
     </script>
 </body>
