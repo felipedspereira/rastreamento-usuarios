@@ -54,14 +54,14 @@
                     <h5 class="text-muted">Entre em contato conosco e descubra como podemos lhe ajudá-lo a alavancar o seu negócio</h5>
 
                     <br>
-                    <form>
+                    <form id="contato">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email:
                                 <span>*</span>
                             </label>
                             <div class="input-group">
                                 <span class="input-group-addon text-primary">@</span>
-                                <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Informe seu email">
+                                <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Informe seu email" required>
                             </div>
                             <small class="form-text text-muted">Não compartilharemos suas informações de contato</small>
                         </div>
@@ -72,7 +72,7 @@
                             <small class="form-text text-muted">Deixe-nos uma mensagem (não obrigatório)</small>
                         </div>
 
-                        <button type="button" class="btn btn-primary" onclick="enviar()">Enviar</button>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
                     </form>
                 </div>
             </div>
@@ -96,6 +96,11 @@
     <script src="/site/js/trackingJS.min.js"></script>
     <script type="text/javascript">
         trackingJS.config('https://rastreamento-usuarios-app.herokuapp.com/activity');
+
+        $("#contato").submit(function (event) {
+            event.preventDefault();
+            enviar();
+        });
 
         var enviar = function () {
             var xhr = new XMLHttpRequest();
