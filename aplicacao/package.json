@@ -1,0 +1,15 @@
+{
+  "name": "tracking-users-backend",
+  "version": "1.0.0",
+  "description": "Store user activities collected by trackingJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "felipe pereira",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2"
+  }
+}
