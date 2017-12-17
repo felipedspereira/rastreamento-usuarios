@@ -43,7 +43,10 @@ var trackingJS = (function (window) {
             headers: {
                 'Content-type': 'application/json'
             },
-            body: JSON.stringify(userActivities)
+            body: JSON.stringify({
+                email: userEmail,
+                activities: userActivities
+            })
         };
         fetch(url, options).then(function (res) {
             cleanLocalstorageActivities(userActivities);

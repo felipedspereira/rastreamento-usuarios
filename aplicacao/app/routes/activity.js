@@ -27,8 +27,6 @@ module.exports = function (app) {
     });
 
     app.post('/activity', function (req, res) {
-        console.log('receiveing new activies...')
-
         var newUser = req.body;
 
         // Find the user
