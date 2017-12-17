@@ -53,7 +53,7 @@
                             <label for="exampleInputEmail1">Email: <span>*</span></label>
                             <div class="input-group">
                                 <span class="input-group-addon text-primary">@</span>
-                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Informe seu email">
+                                <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Informe seu email">
                             </div>
                             <small class="form-text text-muted">Não compartilharemos suas informações de contato</small>
                         </div>
@@ -64,7 +64,7 @@
                             <small class="form-text text-muted">Deixe-nos uma mensagem (não obrigatório)</small>
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Enviar</button>
+                        <button type="button" class="btn btn-primary" onclick="enviar()">Enviar</button>
                     </form>
                 </div>
             </div>
@@ -77,15 +77,35 @@
             <p class="mr-auto">&copy; Felipe Pereira, 2017</p>
             <p class="">v 1.0</p>
         </div>
+        <button class="btn btn-primary" onclick="teste()">OK</button>
     </footer>
-</body>
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
-    crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
-    crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+    <script src="/site/trackingJS.min.js"></script>
+    <script type="text/javascript">
+        trackingJS.config('http://localhost:3000/activity');
+
+        var enviar = function () {
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'http://localhost:3000/enableActivity', true);
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
+                    console.log('nao chegou a ativar')
+                    trackingJS.activateUser($("#exampleInputEmail1").val());
+                }
+            }
+            xhr.send("email=" + $("#exampleInputEmail1").val());
+
+            alert('Sua notificação foi enviada com sucesso!');
+            window.location = '/site'
+        }
+    </script>
 </body>
 
 </html>

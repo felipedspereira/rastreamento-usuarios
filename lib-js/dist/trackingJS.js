@@ -8,6 +8,9 @@
  */
 var trackingJS = (function (window) {
     var url = null;
+    var urlOfActivation = null;
+    var ACTIVITIES_ENTRY = 'activities';
+    var EMAIL_ENTRY = 'email';
 
     // Register for non ajax requests
     window.addEventListener("load", function () {
@@ -16,32 +19,71 @@ var trackingJS = (function (window) {
 
     var sendStatistic = function () {
         if (url == null) {
-            throw "No url supplied to trackingJS. You need to call trackingJS(someUrl) in order to get trackingJS monitoring the user navigation";
+            throw "No url supplied to trackingJS. You need to call trackingJS(someUrl) in order to get trackingJS monitoring the activities navigation";
         }
 
-        var payload = {
-            email: 'felipe.dspereira@gmail.com',
+        var activities = getActivitiesFromLocalstorage();
+        activities.push({
             url: window.location.href,
             date: new Date()
-        };
+        });
 
-        var form = new FormData();
-        form.append("userActivities", JSON.stringify(payload));
+        // Decides whether send data to localstorage or backend
+        var userEmail = getUserEmail();
+        if (userEmail) {
+            sendDataToBackend(userEmail, activities);
+        } else {
+            updateActivitiesInLocalstorage(activities);
+        }
+    }
 
-        var option = {
-            mode: 'no-cors',
+    var sendDataToBackend = function (userEmail, userActivities) {
+        var options = {
             method: 'POST',
-            body: form
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify(userActivities)
         };
-        fetch(url, option).then(function (res) {
-            console.log(JSON.stringify(res, null, 4));
+        fetch(url, options).then(function (res) {
+            cleanLocalstorageActivities(userActivities);
         });
     }
 
-    var trackingJs = function (backendTrackingServerUrl) {
+    var updateActivitiesInLocalstorage = function (activities) {
+        localStorage.setItem(ACTIVITIES_ENTRY, JSON.stringify(activities));
+    }
+
+    var getActivitiesFromLocalstorage = function () {
+        return JSON.parse(localStorage.getItem(ACTIVITIES_ENTRY) || '[]');
+    }
+
+    var getUserEmail = function () {
+        return localStorage.getItem(EMAIL_ENTRY);
+    }
+
+    var cleanLocalstorageActivities = function (activities) {
+        activities = [];
+        localStorage.setItem(ACTIVITIES_ENTRY, JSON.stringify(activities));
+    }
+
+    /**
+     * Configure the lib.
+     * 
+     * @param {*} backendTrackingServerUrl: the backend the will receive the data 
+     */
+    var config = function (backendTrackingServerUrl) {
         url = backendTrackingServerUrl;
     };
 
-    return trackingJs;
+    var activateUser = function(data) {
+        localStorage.setItem(EMAIL_ENTRY, data);
+        console.log('usuario ' + data + " ativado com sucesso ")
+    }
+
+    return {
+        config: config,
+        activateUser: activateUser
+    };
 
 })(window);
