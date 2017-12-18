@@ -2,18 +2,17 @@
 <html lang="pt">
 
 <head>
-    <title>Desafio Rastreamento de Usuários - Contato</title>
+    <title>Desafio Rastreamento de Usuários - Detalhes do produto</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="/site/css/contato.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
         crossorigin="anonymous">
 </head>
 
 <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="/site">
+        <a class="navbar-brand" href="/">
             <span class="text-primary">SaaS Enterprise</span>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
@@ -24,7 +23,7 @@
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/site">Home
+                    <a class="nav-link" href="/">Home
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
@@ -47,39 +46,31 @@
     </nav>
 
     <main role="main">
+
         <div class="jumbotron mt-4">
             <div class="container">
                 <div class="col-8 offset-2">
-                    <h3>Nós temos a solução para o seu negócio</h3>
-                    <h5 class="text-muted">Entre em contato conosco e descubra como podemos lhe ajudá-lo a alavancar o seu negócio</h5>
+                    <h2 class="text-center">Servidor para aplicações Java</h2>
+                    <h5 class="text-center">Desenvolva seus projetos em Java sem se preocupar com detalhes de infraestrutura</h5>
+                    <div class="d-flex justify-content-center">
 
-                    <br>
-                    <form id="contato">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Email:
-                                <span>*</span>
-                            </label>
-                            <div class="input-group">
-                                <span class="input-group-addon text-primary">@</span>
-                                <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Informe seu email" required>
+                        <div class="card" style="width: 20rem;">
+                            <img class="card-img-top" src="/images/java.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             </div>
-                            <small class="form-text text-muted">Não compartilharemos suas informações de contato</small>
+                            <div class="card-footer text-muted text-center">
+                                A partir de R$ 59,90 por mês
+                            </div>
                         </div>
-
-                        <div class="form-group">
-                            <label for="exampleFormControlTextarea1">Descrição:</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Escreva sua mensagem"></textarea>
-                            <small class="form-text text-muted">Deixe-nos uma mensagem (não obrigatório)</small>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary">Enviar</button>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
 
     <hr>
+
     <footer class="container">
         <div class="d-flex">
             <p class="mr-auto">&copy; Felipe Pereira, 2017</p>
@@ -93,29 +84,10 @@
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
         crossorigin="anonymous"></script>
-    <script src="/site/js/trackingJS.min.js"></script>
+
+    <script src="/js/trackingJS.min.js"></script>
     <script type="text/javascript">
         trackingJS.config('https://rastreamento-usuarios-app.herokuapp.com/activity');
-
-        $("#contato").submit(function (event) {
-            event.preventDefault();
-            enviar();
-        });
-
-        var enviar = function () {
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', 'https://rastreamento-usuarios-app.herokuapp.com/enableActivity', true);
-            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
-                    trackingJS.activateUser($("#exampleInputEmail1").val());
-                }
-            }
-            xhr.send("email=" + $("#exampleInputEmail1").val());
-
-            alert('Sua notificação foi enviada com sucesso!');
-            window.location = '/site';
-        }
     </script>
 </body>
 
