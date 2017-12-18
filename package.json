@@ -5,8 +5,7 @@
   "main": "index.html",
   "scripts": {
     "dev": "grunt build-dev; cd dist;http-server -p 8100",
-    "start": "http-server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "http-server"
   },
   "keywords": [
     "site",
