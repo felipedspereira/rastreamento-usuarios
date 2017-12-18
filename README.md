@@ -1,6 +1,6 @@
 # rastreamento-usuarios-site
 
-Just a statical site that is monitored by the [rastreamento-usuarios-aplicacao](https://github.com/felipedspereira/rastreamento-usuarios-aplicacao). 
+Just a statical site that is monitored by the [trackingJS library](https://github.com/felipedspereira/rastreamento-usuarios-libjs). 
 
 ## Running this site in the localhost enviroment
 
