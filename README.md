@@ -8,4 +8,4 @@ Clone this repo, then run the commands below in the following order:
 1) npm install
 2) npm run dev
 
-The app should the available in localhost:8100
+The app should be available in localhost:8100
